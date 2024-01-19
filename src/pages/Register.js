@@ -23,7 +23,7 @@ function Register() {
     const handleClick = (e) => {
         e.preventDefault()
         if (userInfo.name&&userInfo.email&&userInfo.password) {
-            axios.post('https://jobster-fsmsa.vercel.app/register',{ ...userInfo, myID: new Date().getTime().toString()}).then(({data})=>{
+            axios.post('https://my-jobster-server.vercel.app/register',{ ...userInfo, myID: new Date().getTime().toString()}).then(({data})=>{
                 showAlert({
                     msg: data,
                     type: 'success'
