@@ -16,7 +16,7 @@ function Dashboard() {
   })
   const getStatus = async () => {
     startLoading()
-    axios.get('https://jobster-2-muhammads-projects-3b5225e4.vercel.app/getstatus').then(({ data }) => {
+    axios.get('https://my-jobster-server.vercel.app/getstatus').then(({ data }) => {
       setStatus({
         ...status,
         numPen: data.numPen,
