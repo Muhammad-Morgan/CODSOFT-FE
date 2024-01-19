@@ -24,7 +24,7 @@ const Postjob = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (user.position && user.company && user.location && user.status && user.jobType) {
-            axios.put('https://jobster-2-muhammads-projects-3b5225e4.vercel.app/addjob', {
+            axios.put('https://my-jobster-server.vercel.app/addjob', {
                 position: user.position.toLocaleLowerCase(),
                 company: user.company.toLocaleLowerCase(),
                 location: user.location.toLocaleLowerCase(),
