@@ -17,7 +17,7 @@ const Profile = () => {
     const getData = async () => {
         var userIn = JSON.parse(localStorage.getItem('userDetails') || "{}")
         startLoading()
-        axios.get(`https://jobster-fsmsa.vercel.app/profile?id=${userIn.myID}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/profile?id=${userIn.myID}`).then(({ data }) => {
             setUser(data)
         })
         endLoading()
