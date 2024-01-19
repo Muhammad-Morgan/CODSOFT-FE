@@ -18,7 +18,7 @@ const Alljobs = () => {
     const getData = useCallback(
         async () => {
             startLoading()
-            axios.get(`https://jobster-fsmsa.vercel.app/getjobs`).then(({ data }) => {
+            axios.get(`https://my-jobster-server.vercel.app/getjobs`).then(({ data }) => {
                 setJobList(data)
             }).catch(err => console.log(err))
             endLoading()
