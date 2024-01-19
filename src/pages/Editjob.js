@@ -26,7 +26,7 @@ const Editjob = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put(`https://jobster-fsmsa.vercel.app/editmyjob?id=${_id}`, {
+        axios.put(`https://my-jobster-server.vercel.app/editmyjob?id=${_id}`, {
             position: singleJob.position,
             company: singleJob.company,
             location: singleJob.location,
