@@ -22,7 +22,7 @@ function Login() {
   const handleClick = (e) => {
     e.preventDefault()
     if (userInfo.email && userInfo.password) {
-      axios.post('https://jobster-fsmsa.vercel.app/login', userInfo).then(({ data }) => {
+      axios.post('https://my-jobster-server.vercel.app/login', userInfo).then(({ data }) => {
         const { _id, name, isUserLogged, myID } = data
         var userDetails = JSON.parse(localStorage.getItem('userDetails') || "{}")
         userDetails = {
