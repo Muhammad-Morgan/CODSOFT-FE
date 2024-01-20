@@ -37,13 +37,13 @@ const Editjob = () => {
         }).catch(err => console.log(err))
     }
     const handledelete = () => {
-        axios.delete(`https://jobster-fsmsa.vercel.app/deletejob?id=${_id}`).then(() => {
+        axios.delete(`https://my-jobster-server.vercel.app/deletejob?id=${_id}`).then(() => {
             navigate('/alljobs')
         }).catch(err => console.log(err))
     }
     const getData = async () => {
         startLoading()
-        axios.get(`https://jobster-fsmsa.vercel.app/api/getsinglejob?id=${_id}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/api/getsinglejob?id=${_id}`).then(({ data }) => {
             if (data) {
                 setEmptyCondition(false)
                 setSingleJob(data)
