@@ -36,7 +36,7 @@ main{
   flex-direction: column;
   justify-content: center;
   height: fit-content !important;
-  padding-bottom: 200rem;
+  padding-bottom: 30rem;
 }
 ul {
   list-style: none;
