@@ -32,7 +32,7 @@ const Alljobs = () => {
             ...job,
             [name]: value
         })
-        axios.get(`https://jobster-fsmsa.vercel.app/filterjobs?position=${value}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/filterjobs?position=${value}`).then(({ data }) => {
             setJobList(data)
         })
     }
@@ -43,7 +43,7 @@ const Alljobs = () => {
             ...job,
             [name]: value
         })
-        axios.put('https://jobster-fsmsa.vercel.app/filterstatus', {
+        axios.put('https://my-jobster-server.vercel.app/filterstatus', {
             status: value
         }).then(({ data }) => {
             setJobList(data)
@@ -56,7 +56,7 @@ const Alljobs = () => {
             ...job,
             [name]: value
         })
-        axios.put('https://jobster-fsmsa.vercel.app/filtertypes', {
+        axios.put('https://my-jobster-server.vercel.app/filtertypes', {
             type: value
         }).then(({ data }) => {
             setJobList(data)
