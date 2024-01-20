@@ -21,6 +21,7 @@ const Sidebar = () => {
       <div className="sidebar-links">
         <ul className="nav flex-column">
           <Link
+            onClick={()=>hideSideBar()}
             to="/dashboard"
             className="nav-item">
             <FontAwesomeIcon
@@ -31,6 +32,7 @@ const Sidebar = () => {
             Stats
           </Link>
           <Link
+            onClick={()=>hideSideBar()}
             to="/alljobs"
             className="nav-item">
             <FontAwesomeIcon
@@ -41,6 +43,7 @@ const Sidebar = () => {
             All Jobs
           </Link>
           <Link
+            onClick={()=>hideSideBar()}
             to="/postjob"
             className="nav-item">
             <FontAwesomeIcon
@@ -51,6 +54,7 @@ const Sidebar = () => {
             Post a Job
           </Link>
           <Link
+            onClick={()=>hideSideBar()}
             to="/profile"
             className="nav-item">
             <FontAwesomeIcon
