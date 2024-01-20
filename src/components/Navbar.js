@@ -9,10 +9,7 @@ const Navbar = () => {
     const { userDetails, logOutBtn, LogOutBtn, toggleLogOutBtn, showSideBar, showAlert, updateUser } = useGlobalContext()
     const handleLogOut = (e) => {
         e.preventDefault()
-        var loggedUser = JSON.parse(localStorage.getItem('userDetails')||"{}")
-        axios.delete("https://my-jobster-server.vercel.app/logout",{
-            id: loggedUser?._id
-        }).then(()=>{
+        axios.delete(`https://my-jobster-server.vercel.app/logout?id=${userDetails._id}`).then(()=>{
         updateUser()
         }).catch(err=>console.log(err))
         localStorage.setItem('userDetails', JSON.stringify({
