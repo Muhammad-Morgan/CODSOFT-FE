@@ -55,7 +55,7 @@ function Login() {
   return (
     <>
       <div className="card mt-4" style={{
-        width: '400px', minWidth: '350px', marginInline: 'auto', border: 'none', boxShadow: '0px 2px 1px rgba(0, 0, 0, .2)', borderRadius: '5px', borderTopColor: 'var(--primary-color-1)', borderTopWidth: '5px', borderTopStyle: 'solid',
+        marginBlock: 'auto' ,width: '400px', minWidth: '350px', marginInline: 'auto', border: 'none', boxShadow: '0px 2px 1px rgba(0, 0, 0, .2)', borderRadius: '5px', borderTopColor: 'var(--primary-color-1)', borderTopWidth: '5px', borderTopStyle: 'solid',
       }}>
         <form
           className="card-body p-4">
