@@ -19,7 +19,7 @@ const Alljobs = () => {
     const getData = useCallback(
         async () => {
             startLoading()
-            axios.get(`http://localhost:5000/getjobs`).then(({ data }) => {
+            axios.get(`https://my-jobster-server.vercel.app/getjobs`).then(({ data }) => {
                 setJobList(data)
             }).catch(err => console.log(err))
             endLoading()
@@ -33,7 +33,7 @@ const Alljobs = () => {
             ...job,
             [name]: value
         })
-        axios.get(`http://localhost:5000/filterjobs?position=${value}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/filterjobs?position=${value}`).then(({ data }) => {
             setJobList(data)
         })
     }
@@ -44,7 +44,7 @@ const Alljobs = () => {
             ...job,
             [name]: value
         })
-        axios.put('http://localhost:5000/filterstatus', {
+        axios.put('https://my-jobster-server.vercel.app/filterstatus', {
             status: value
         }).then(({ data }) => {
             setJobList(data)
@@ -57,7 +57,7 @@ const Alljobs = () => {
             ...job,
             [name]: value
         })
-        axios.put('http://localhost:5000/filtertypes', {
+        axios.put('https://my-jobster-server.vercel.app/filtertypes', {
             type: value
         }).then(({ data }) => {
             setJobList(data)
@@ -76,7 +76,7 @@ const Alljobs = () => {
     }, []);
     useEffect(() => {
         var localToken = localStorage.getItem('localToken')
-        axios.get(`http://localhost:5000/auth?token=${localToken}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/auth?token=${localToken}`).then(({ data }) => {
             const { state, myToken } = data
             if (state !== 'success') {
                 navigate('/login')

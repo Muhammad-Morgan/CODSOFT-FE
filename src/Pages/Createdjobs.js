@@ -26,7 +26,7 @@ const Createdjobs = () => {
         const localToken = localStorage.getItem('localToken')
         const getData = jwtDecode(localToken)
         const {myID}=getData
-        axios.get(`http://localhost:5000/filteremployerjobs?position=${value}&&myID=${myID}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/filteremployerjobs?position=${value}&&myID=${myID}`).then(({ data }) => {
             setJobList(data)
         }).catch(err => console.log(err))
     }
@@ -40,7 +40,7 @@ const Createdjobs = () => {
         const localToken = localStorage.getItem('localToken')
         const getData = jwtDecode(localToken)
         const {myID}=getData
-        axios.get(`http://localhost:5000/filteremployerstatus?status=${value}&&myID=${myID}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/filteremployerstatus?status=${value}&&myID=${myID}`).then(({ data }) => {
             setJobList(data)
         }).catch(err => console.log(err))
     }
@@ -54,7 +54,7 @@ const Createdjobs = () => {
         const localToken = localStorage.getItem('localToken')
         const getData = jwtDecode(localToken)
         const {myID}=getData
-        axios.get(`http://localhost:5000/filteremployertypes?type=${value}&&myID=${myID}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/filteremployertypes?type=${value}&&myID=${myID}`).then(({ data }) => {
             setJobList(data)
         }).catch(err => console.log(err))
     }
@@ -68,7 +68,7 @@ const Createdjobs = () => {
         const localToken = localStorage.getItem('localToken')
         const getData = jwtDecode(localToken)
         const { myID } = getData
-        axios.get(`http://localhost:5000/employerpool?id=${myID}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/employerpool?id=${myID}`).then(({ data }) => {
             setJobList(data)
         }).catch(err => console.log(err))
     }
@@ -76,14 +76,14 @@ const Createdjobs = () => {
         const localToken = localStorage.getItem('localToken')
         const getData = jwtDecode(localToken)
         const { myID } = getData
-        axios.get(`http://localhost:5000/employerpool?id=${myID}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/employerpool?id=${myID}`).then(({ data }) => {
             setJobList(data)
         }).catch(err => console.log(err))
     }, [userDetails.name])
     useEffect(() => {
         startLoading()
         var localToken = localStorage.getItem('localToken')
-        axios.get(`http://localhost:5000/auth?token=${localToken}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/auth?token=${localToken}`).then(({ data }) => {
             const { state, myToken } = data
             if (state !== 'success') {
                 navigate('/login')

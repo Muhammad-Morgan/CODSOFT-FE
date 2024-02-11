@@ -28,7 +28,7 @@ const Postjob = () => {
         const getData = jwtDecode(lT)
         const {myID}=getData
         if (user.position && user.company && user.location && user.status && user.jobType) {
-            axios.put('http://localhost:5000/addjob', {
+            axios.put('https://my-jobster-server.vercel.app/addjob', {
                 position: user.position.toLocaleLowerCase(),
                 company: user.company.toLocaleLowerCase(),
                 location: user.location.toLocaleLowerCase(),
@@ -72,7 +72,7 @@ const Postjob = () => {
     }
     useEffect(() => {
         var localToken = localStorage.getItem('localToken')
-        axios.get(`http://localhost:5000/auth?token=${localToken}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/auth?token=${localToken}`).then(({ data }) => {
             const { state, myToken } = data
             if (state !== 'success') {
                 navigate('/login')

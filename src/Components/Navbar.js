@@ -10,7 +10,7 @@ const Navbar = () => {
     const handleLogOut = (e) => {
         e.preventDefault()
         hideSideBar()
-        axios.delete(`http://localhost:5000/logout`).then(({data}) => {
+        axios.delete(`https://my-jobster-server.vercel.app/logout`).then(({data}) => {
             const {msg,type}=data
             localStorage.removeItem('localToken')
             showAlert({

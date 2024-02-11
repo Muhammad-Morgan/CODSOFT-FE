@@ -20,7 +20,7 @@ const Profile = () => {
         const getToken = jwtDecode(localToken)
         const { myID } = getToken
         startLoading()
-        axios.get(`http://localhost:5000/profile?id=${myID}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/profile?id=${myID}`).then(({ data }) => {
             setUser(data)
         })
         endLoading()
@@ -38,7 +38,7 @@ const Profile = () => {
         const getToken = jwtDecode(localToken)
         const { myID } = getToken
         e.preventDefault()
-        axios.put(`http://localhost:5000/updateuser?id=${myID}`, {
+        axios.put(`https://my-jobster-server.vercel.app/updateuser?id=${myID}`, {
             name: user.name,
             lastName: user.lastName,
             email: user.email,
@@ -56,7 +56,7 @@ const Profile = () => {
     }, [userDetails?.name])
     useEffect(() => {
         var localToken = localStorage.getItem('localToken')
-        axios.get(`http://localhost:5000/auth?token=${localToken}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/auth?token=${localToken}`).then(({ data }) => {
             const { state, myToken } = data
             if (state !== 'success') {
                 navigate('/login')

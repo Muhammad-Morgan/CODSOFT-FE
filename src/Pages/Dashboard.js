@@ -17,7 +17,7 @@ function Dashboard() {
   })
   const getStatus = async () => {
     startLoading()
-    axios.get('http://localhost:5000/getstatus').then(({ data }) => {
+    axios.get('https://my-jobster-server.vercel.app/getstatus').then(({ data }) => {
       setStatus({
         ...status,
         numPen: data.numPen,
@@ -30,7 +30,7 @@ function Dashboard() {
   useEffect(() => {
     startLoading()
     var token = localStorage.getItem('localToken') || ''
-    axios.get(`http://localhost:5000/auth?token=${token}`).then(({ data }) => {
+    axios.get(`https://my-jobster-server.vercel.app/auth?token=${token}`).then(({ data }) => {
       const { myToken, state } = data
       if (state !== 'success') {
         navigate('/login')

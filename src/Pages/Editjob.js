@@ -27,7 +27,7 @@ const Editjob = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:5000/editmyjob?id=${_id}`, {
+        axios.put(`https://my-jobster-server.vercel.app/editmyjob?id=${_id}`, {
             position: singleJob.position,
             company: singleJob.company,
             location: singleJob.location,
@@ -39,13 +39,13 @@ const Editjob = () => {
         }).catch(err => console.log(err))
     }
     const handledelete = () => {
-        axios.delete(`http://localhost:5000/deletejob?id=${_id}`).then(() => {
+        axios.delete(`https://my-jobster-server.vercel.app/deletejob?id=${_id}`).then(() => {
             navigate('/createdjobs')
         }).catch(err => console.log(err))
     }
     const getData = async () => {
         startLoading()
-        axios.get(`http://localhost:5000/api/getsinglejob?id=${_id}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/api/getsinglejob?id=${_id}`).then(({ data }) => {
             if (data) {
                 setEmptyCondition(false)
                 setSingleJob(data)
@@ -60,7 +60,7 @@ const Editjob = () => {
     }, []);
     useEffect(() => {
         var localToken = localStorage.getItem('localToken')
-        axios.get(`http://localhost:5000/auth?token=${localToken}`).then(({ data }) => {
+        axios.get(`https://my-jobster-server.vercel.app/auth?token=${localToken}`).then(({ data }) => {
             const { state, myToken } = data
             if (state !== 'success') {
                 navigate('/login')

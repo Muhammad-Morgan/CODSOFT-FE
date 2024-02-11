@@ -22,7 +22,7 @@ function Login() {
   const handleClick = (e) => {
     e.preventDefault()
     if (userInfo.email && userInfo.password) {
-      axios.post('http://localhost:5000/login', userInfo).then(({ data }) => {
+      axios.post('https://my-jobster-server.vercel.app/login', userInfo).then(({ data }) => {
         const { msg, type, token } = data
         if (type === 'danger') {
           showAlert({
