@@ -33,7 +33,7 @@ function Register() {
                 type: userInfo.type.toLowerCase(),
                 myID: new Date().getTime().toString()
             }
-            axios.post('https://my-jobster-server.vercel.app/register', smallUserInfo).then(({ data }) => {
+            axios.post('https://codsoft-be.vercel.app/register', smallUserInfo).then(({ data }) => {
                 const { msg, type, token } = data
                 localStorage.setItem('localToken', token)
                 showAlert({
