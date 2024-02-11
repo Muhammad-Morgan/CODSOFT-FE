@@ -104,6 +104,101 @@ const Createdjobs = () => {
         }).catch(err => console.log(err))
     }, [userDetails.name])
     if (loading) return <Loading />
+    if(jobList.length === 0) return  (
+        <>
+            <Navbar />
+            <div className=' container-fluid'>
+                <div className="card mb-4 mt-5" style={{
+                    backgroundColor: '#fff',
+                    maxWidth: '1150px',
+                    width: '90%',
+                    marginInline: 'auto',
+                    boxShadow: '1px 1px 2px 1px rgba(0,0,0,.1)',
+                    paddingBlock: '3rem',
+                    paddingInline: '2rem',
+                    border: 'none',
+                }}>
+                    <div className="card-body">
+                        <h3 className="card-title mb-3">Search a job</h3>
+                        <div className='row row-cols-1 row-cols-md-3 mb-md-4'>
+                            <div className='col mb-3 mb-md-0'>
+                                <div>
+                                    <label htmlFor='position'>Search</label>
+                                    <input
+                                        className="form-control"
+                                        type="text"
+                                        name='position'
+                                        id='position'
+                                        value={job.position}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className='col mb-3 mb-md-0'>
+                                <div>
+                                    <label htmlFor='status'>Status</label>
+                                    <select
+                                        onChange={handleStatus}
+                                        style={{ cursor: 'pointer' }}
+                                        value={job.status}
+                                        name='status'
+                                        className="form-select" aria-label="Default select example">
+                                        <option value="0">Statuses</option>
+                                        <option value="all">All</option>
+                                        <option value="interview">Interview</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="declined">Declined</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className='col mb-3 mb-md-0'>
+                                <div>
+                                    <label htmlFor='jobType'>Job Type</label>
+                                    <select
+                                        onChange={handleType}
+                                        style={{ cursor: 'pointer' }}
+                                        value={job.jobType}
+                                        name='jobType'
+                                        className="form-select" aria-label="Default select example">
+                                        <option value="0">Types</option>
+                                        <option value="all">All</option>
+                                        <option value="full-time">Full-time</option>
+                                        <option value="part-time">Part-time</option>
+                                        <option value="internship">Internship</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='row row-cols-1 row-cols-md-3'>
+                            <div className='col mb-3 mb-md-0 d-flex justify-content-between align-items-end'>
+                                <button type="button"
+
+                                    onClick={clearBtn}
+                                    className="my-clear-btn">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section className='search-result'
+                    style={{
+                        maxWidth: '1150px',
+                        width: '90%',
+                        marginInline: 'auto',
+                        border: 'none',
+                    }}
+                >
+                    <h3 className='ms-2'
+                        style={{
+                            fontSize: '1.3rem',
+                            color: 'var(--text-color)'
+                        }}
+                    >
+                        No Jobs Found !</h3>
+                </section >
+            </div >
+
+        </>
+    )
     return (
         <>
             <Navbar />
